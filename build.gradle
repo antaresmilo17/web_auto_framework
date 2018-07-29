@@ -1,0 +1,58 @@
+apply plugin: 'java'
+
+project.ext {
+    cucumberVersion = '1.2.5'
+    junitVersion = '4.12'
+    seleniumVersion = '3.8.1'
+    gsonVersion = '2.8.0'
+    springVersion = '4.3.4.RELEASE'
+}
+
+dependencies {
+    testCompile 'info.cukes:cucumber-spring:' + cucumberVersion
+    testCompile 'info.cukes:cucumber-junit:' + cucumberVersion
+    testCompile 'info.cukes:cucumber-jvm:' + cucumberVersion
+    testCompile 'info.cukes:cucumber-core:' + cucumberVersion
+    compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-testng', version: cucumberVersion
+    compile group: 'org.testng', name: 'testng', version: '6.10'
+    testCompile 'junit:junit:' + junitVersion
+    compile group: 'com.saucelabs', name: 'sauce_junit', version: '2.1.23'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: seleniumVersion
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    compile group: 'commons-configuration', name: 'commons-configuration', version: '1.6'
+    compile group: 'com.typesafe', name: 'config', version: '1.0.2'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'io.appium', name: 'java-client', version: '4.1.2'
+    compile group: 'com.applitools', name: 'eyes-selenium-java', version: '2.54'
+    compile group: 'com.google.code.gson', name: 'gson', version: gsonVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework', name: 'spring-test', version: springVersion
+    compile group: 'com.github.mkolisnyk', name: 'cucumber-reports', version: '0.0.11'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.1'
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.21'
+    compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.21'
+    compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.21'
+    compile group: 'commons-configuration', name: 'commons-configuration', version: '1.6'
+    compile 'io.github.prashant-ramcharan:courgette-jvm:1.4.0'
+    compile group: 'org.springframework', name: 'spring-tx', version: '5.0.1.RELEASE'
+    compile 'com.google.guava:guava:24.1-jre'
+    compile group: 'net.lightbody.bmp', name: 'browsermob-core', version: '2.1.5'
+
+
+}
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2.1'
+}

@@ -1,0 +1,30 @@
+*.class
+gradle-wrapper.properties
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+# Package Files #
+
+*.ear
+*.bat
+hs_err_pid*
+
+.idea/
+*.iml
+build/
+
+# Others
+.gradle/*
+target/*
+out/*
+gradle/wrapper/gradle-wrapper.properties
+
+
+
+.DS_Store
+.gradle/
+target/
+ttautomation.properties
+ttautomation.xml
+jmeter.log
+src/test/jmeter.log
